@@ -10,6 +10,7 @@
 // @match        www.bilibili.com/*
 // @match        t.bilibili.com/*
 // @grant        none
+// @icon https://www.google.com/s2/favicons?sz=64&domain=bilibili.com
 // @require      https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js
 /* globals jQuery, $, waitForKeyElements */
 // ==/UserScript==
