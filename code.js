@@ -10,6 +10,7 @@
 // @match        www.bilibili.com/*
 // @match        t.bilibili.com/*
 // @grant        none
+// @license MIT
 // @icon https://www.google.com/s2/favicons?sz=64&domain=bilibili.com
 // @require      https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js
 /* globals jQuery, $, waitForKeyElements */
@@ -53,7 +54,7 @@
                 if(OPEN_HIDE_ADV){hidenAdv_DynamicPage()}
             }else if(current_top_domain_name == mian_page_flag){
                 //主页
-                if(current_url_flag_name == index_page_flag || current_url_flag_name == ""){
+                if(current_url_flag_name.indexOf(index_page_flag)==0 || current_url_flag_name == "" ){
                     //是主页进行跳转
                     if(OPEN_AUTO_REDIRECT){redirectToDynamicPage()}
                 }else{
@@ -236,7 +237,7 @@
 
     function getUrlFlagName(){
         var current_url=window.location.href;
-        var url_reg=/https:\/\/(www|t).*?\/(.*?\?spm_id_from)=.*/g
+        var url_reg=/https:\/\/(www|t).*?\/(.*)/g
         if(url_reg.test(current_url)){
             return RegExp.$2;
         }else{
